@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "calculator",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "mp-actionSheet": "../../miniprogram_npm/weui-miniprogram/actionsheet/actionsheet",
+    "mp-half-screen-dialog": "../../miniprogram_npm/weui-miniprogram/half-screen-dialog/half-screen-dialog"
+  }
+}

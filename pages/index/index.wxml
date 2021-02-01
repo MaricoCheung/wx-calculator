@@ -1,0 +1,64 @@
+<view class="container">
+  <!-- 导航栏 -->
+  <view class="bar">
+    <image src="../../assets/menu.png" bindtap="ctsHandle" class="menu-incon"></image>
+    <mp-actionSheet class="type-show" bindactiontap="calcuTypeSelect" show="{{showCalcuType}}" 
+    actions="{{calcuType}}" title="计算器类型">
+    </mp-actionSheet>
+    <view>{{CalcuType.item}}</view>
+    <image src="../../assets/language.png" bindtap="ltsHandle" class="language-icon"></image>
+    <mp-actionSheet class="type-show lang" bindactiontap="langTypeSelect" show="{{showLangType}}" 
+    actions="{{langType}}" title="语言类型">
+    </mp-actionSheet>
+    <view></view>
+    <image src="../../assets/record.png" bindtap="rdHandle" class="record-icon"></image>
+    <mp-half-screen-dialog 
+    bindbuttontap="buttontap"
+    show="{{show}}"
+    maskClosable="{{false}}" 
+    title="测试标题B" 
+    subTitle="测试标题B的副标题"
+    desc="辅助描述内容，可根据实际需要安排"
+    tips="辅助提示内容，可根据实际需要安排"
+    buttons="{{buttons}}" closabled="false" class="record">
+    </mp-half-screen-dialog>
+  </view>
+  <!-- 屏幕显示 -->
+  <view class="screen">
+    <view class="formula">{{op}}</view>
+    <view class="result">{{num}}</view>
+  </view>
+  <!-- 键盘按钮 -->
+  <view class="btns">
+    <view>
+      <view hover-class="btn-bg" bindtap="resetBtnHandle">C</view>
+      <view hover-class="btn-bg" bindtap="opBtnHandle" data-val="%">%</view>
+      <view hover-class="btn-bg" bindtap="opBtnHandle" data-val="÷">÷</view>
+      <view hover-class="btn-bg" bindtap="bsBtnHandle">DEL</view>
+    </view>
+    <view>
+      <view hover-class="btn-bg" bindtap="digitBtn" data-val="7">7</view>
+      <view hover-class="btn-bg" bindtap="digitBtn" data-val="8">8</view>
+      <view hover-class="btn-bg" bindtap="digitBtn" data-val="9">9</view>
+      <view hover-class="btn-bg" bindtap="opBtnHandle" data-val="×">×</view>
+    </view>
+    <view>
+      <view hover-class="btn-bg" bindtap="digitBtn" data-val="4">4</view>
+      <view hover-class="btn-bg" bindtap="digitBtn" data-val="5">5</view>
+      <view hover-class="btn-bg" bindtap="digitBtn" data-val="6">6</view>
+      <view hover-class="btn-bg" bindtap="opBtnHandle" data-val="-">-</view>
+    </view>
+    <view>
+      <view hover-class="btn-bg" bindtap="digitBtn" data-val="1">1</view>
+      <view hover-class="btn-bg" bindtap="digitBtn" data-val="2">2</view>
+      <view hover-class="btn-bg" bindtap="digitBtn" data-val="3">3</view>
+      <view hover-class="btn-bg" bindtap="opBtnHandle" data-val="+">+</view>
+    </view>
+    <view>
+      <view hover-class="btn-bg" bindtap="poneBtn" data-val="+/-">+/-</view>
+      <view hover-class="btn-bg" bindtap="digitBtn" data-val="0">0</view>
+      <view hover-class="btn-bg" bindtap="dotBtn" data-val=".">.</view>
+      <view hover-class="btn-equal-bg" id="equal" bindtap="opBtnHandle" data-val="=">=</view>
+    </view>
+  </view>
+</view>

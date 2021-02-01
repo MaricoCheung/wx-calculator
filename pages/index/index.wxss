@@ -1,0 +1,109 @@
+page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 4rpx;
+  background-color: #b8bcbf;
+}
+/* 导航栏 */
+.bar {
+  position: relative;
+  display: flex;
+  height: 100rpx;
+  background-color: pink;
+}
+.bar image {
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+}
+.menu-icon {
+  top: 0;
+  left: 0;
+}
+.language-icon {
+  top: 0;
+  left: 350rpx;
+}
+.record-icon {
+  top: 0;
+  right: 0;
+}
+.type-show,
+.record {
+  width: 100rpx;
+  height: 100%;
+  padding: 10rpx;
+  box-sizing: border-box;
+  background-color: wheat;
+}
+.record {
+  margin-left: 200rpx;
+}
+.lang {
+  margin-left: 250rpx
+}
+/* 屏幕显示 */
+.screen {
+  flex: 1;
+  position: relative;
+  font-family: 'Verdana';
+}
+.formula {
+  position: absolute;
+  bottom: 160rpx;
+  right: 20rpx;
+  font-size: 60rpx;
+}
+.result {
+  position: absolute;
+  bottom: 20rpx;
+  right: 20rpx;
+  font-size: 110rpx;
+  font-weight: 600;
+}
+/* 键盘按钮 */
+.btns {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  font-size: 38rpx;
+  background-color: #999;
+}
+.btns > view {
+  flex: 1;
+  display: flex;
+}
+.btns > view > view {
+  flex: 25%;
+  margin: 0 4rpx 4rpx 0;
+  box-sizing: border-box;
+  text-align: center;
+  /* 控制键盘按钮高度 */
+  line-height: 120rpx;
+  background-color:#f2f2f2;
+}
+.btns > view:first-child view {
+  margin-top: 4rpx;
+  background-color: wheat;
+}
+.btns > view > view:last-child {
+  background-color: wheat;
+}
+.btns > view > view:first-child {
+  margin-left: 4rpx;
+}
+.btns > view .btn-bg {
+  background-color: #b6b6b6 !important;
+}
+.btns > view .btn-equal-bg {
+  background-color: #398dcf !important;
+}
+.btns > view #equal {
+  background-color: #72a2c8;
+}
