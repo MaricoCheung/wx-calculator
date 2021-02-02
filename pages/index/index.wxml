@@ -1,64 +1,76 @@
 <view class="container">
   <!-- 导航栏 -->
   <view class="bar">
-    <image src="../../assets/menu.png" bindtap="ctsHandle" class="menu-incon"></image>
-    <mp-actionSheet class="type-show" bindactiontap="calcuTypeSelect" show="{{showCalcuType}}" 
+    <image src="../../assets/menu.png" bindtap="ctsHandle"></image>
+    <mp-actionSheet bindactiontap="calcuTypeSelect" show="{{showCalcuType}}" 
     actions="{{calcuType}}" title="计算器类型">
     </mp-actionSheet>
-    <view>{{CalcuType.item}}</view>
-    <image src="../../assets/language.png" bindtap="ltsHandle" class="language-icon"></image>
-    <mp-actionSheet class="type-show lang" bindactiontap="langTypeSelect" show="{{showLangType}}" 
+    <text>{{calcuText.text}}</text>
+    <image src="../../assets/language.png" bindtap="ltsHandle"></image>
+    <mp-actionSheet bindactiontap="langTypeSelect" show="{{showLangType}}" 
     actions="{{langType}}" title="语言类型">
     </mp-actionSheet>
-    <view></view>
-    <image src="../../assets/record.png" bindtap="rdHandle" class="record-icon"></image>
+    <text>{{langText.text}}</text>
     <mp-half-screen-dialog 
-    bindbuttontap="buttontap"
-    show="{{show}}"
-    maskClosable="{{false}}" 
-    title="测试标题B" 
-    subTitle="测试标题B的副标题"
-    desc="辅助描述内容，可根据实际需要安排"
-    tips="辅助提示内容，可根据实际需要安排"
-    buttons="{{buttons}}" closabled="false" class="record">
+    show="{{showRd}}" 
+    maskClosable="true"
+    desc="{{rdMsg}}"
+    title="历史记录" >
     </mp-half-screen-dialog>
+    <image src="../../assets/record.png" bindtap="rdHandle"></image>
   </view>
   <!-- 屏幕显示 -->
   <view class="screen">
-    <view class="formula">{{op}}</view>
-    <view class="result">{{num}}</view>
+    <view class="pre">{{operator}}</view>
+    <view class="now-input">{{screenNum}}</view>
   </view>
   <!-- 键盘按钮 -->
+  <view class="btns-m">
+    <view hover-class="btn-bg">MC</view>
+    <view hover-class="btn-bg">MR</view>
+    <view hover-class="btn-bg">M+</view>
+    <view hover-class="btn-bg">M-</view>
+    <view hover-class="btn-bg">MS</view>
+    <view hover-class="btn-bg">M*</view>
+  </view>
   <view class="btns">
-    <view>
-      <view hover-class="btn-bg" bindtap="resetBtnHandle">C</view>
-      <view hover-class="btn-bg" bindtap="opBtnHandle" data-val="%">%</view>
-      <view hover-class="btn-bg" bindtap="opBtnHandle" data-val="÷">÷</view>
-      <view hover-class="btn-bg" bindtap="bsBtnHandle">DEL</view>
-    </view>
-    <view>
-      <view hover-class="btn-bg" bindtap="digitBtn" data-val="7">7</view>
-      <view hover-class="btn-bg" bindtap="digitBtn" data-val="8">8</view>
-      <view hover-class="btn-bg" bindtap="digitBtn" data-val="9">9</view>
-      <view hover-class="btn-bg" bindtap="opBtnHandle" data-val="×">×</view>
-    </view>
-    <view>
-      <view hover-class="btn-bg" bindtap="digitBtn" data-val="4">4</view>
-      <view hover-class="btn-bg" bindtap="digitBtn" data-val="5">5</view>
-      <view hover-class="btn-bg" bindtap="digitBtn" data-val="6">6</view>
-      <view hover-class="btn-bg" bindtap="opBtnHandle" data-val="-">-</view>
-    </view>
-    <view>
-      <view hover-class="btn-bg" bindtap="digitBtn" data-val="1">1</view>
-      <view hover-class="btn-bg" bindtap="digitBtn" data-val="2">2</view>
-      <view hover-class="btn-bg" bindtap="digitBtn" data-val="3">3</view>
-      <view hover-class="btn-bg" bindtap="opBtnHandle" data-val="+">+</view>
-    </view>
-    <view>
-      <view hover-class="btn-bg" bindtap="poneBtn" data-val="+/-">+/-</view>
-      <view hover-class="btn-bg" bindtap="digitBtn" data-val="0">0</view>
-      <view hover-class="btn-bg" bindtap="dotBtn" data-val=".">.</view>
-      <view hover-class="btn-equal-bg" id="equal" bindtap="opBtnHandle" data-val="=">=</view>
-    </view>
+    <block>
+      <view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="10">%</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="11">CE</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="12">C</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="13"><image src="../../assets/back.png"></image></view>
+      </view>
+      <view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="14">1/x</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="15">x²</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="16"><image src="../../assets/root.png"></image></view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="17">÷</view>
+      </view>
+      <view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="7">7</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="8">8</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="9">9</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="18">×</view>
+      </view>
+      <view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="4">4</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="5">5</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="6">6</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="19">-</view>
+      </view>
+      <view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="1">1</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="2">2</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="3">3</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="20">+</view>
+      </view>
+      <view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="21">±</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="0">0</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="22">.</view>
+        <view hover-class="btn-equal-bg" bindtap="btnHandle" data-value="23" id="equal">=</view>
+      </view>
+    </block>
   </view>
 </view>
