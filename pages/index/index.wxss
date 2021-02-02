@@ -9,58 +9,61 @@ page {
   height: 100%;
   padding: 4rpx;
   background-color: #b8bcbf;
+  font-weight: '微软雅黑';
 }
 /* 导航栏 */
 .bar {
   position: relative;
   display: flex;
-  height: 100rpx;
-  background-color: pink;
+  height: 65rpx;
+}
+.bar text {
+  position: absolute;
+}
+.bar text:nth-of-type(1) {
+  top: 6rpx;
+  left: 75rpx;
+  font-weight: 700;
+}
+.bar text:nth-of-type(2) {
+  top: 6rpx;
+  left: 315rpx;
 }
 .bar image {
   position: absolute;
-  width: 100rpx;
-  height: 100rpx;
+  margin: 10rpx;
+  padding-bottom: 20rpx;
+  width: 50rpx;
+  height: 50rpx;
+  z-index: 99;
 }
-.menu-icon {
+.bar image:nth-of-type(1) {
+  padding-right: 100rpx;
   top: 0;
   left: 0;
 }
-.language-icon {
+.bar image:nth-of-type(2) {
+  padding-right: 100rpx;
   top: 0;
-  left: 350rpx;
+  left: 240rpx;
 }
-.record-icon {
+.bar image:nth-of-type(3) {
   top: 0;
   right: 0;
-}
-.type-show,
-.record {
-  width: 100rpx;
-  height: 100%;
-  padding: 10rpx;
-  box-sizing: border-box;
-  background-color: wheat;
-}
-.record {
-  margin-left: 200rpx;
-}
-.lang {
-  margin-left: 250rpx
+  padding-left: 50rpx;
 }
 /* 屏幕显示 */
 .screen {
   flex: 1;
   position: relative;
-  font-family: 'Verdana';
 }
-.formula {
+.pre {
   position: absolute;
   bottom: 160rpx;
   right: 20rpx;
   font-size: 60rpx;
 }
-.result {
+.now-input {
   position: absolute;
   bottom: 20rpx;
   right: 20rpx;
@@ -68,38 +71,57 @@ page {
   font-weight: 600;
 }
 /* 键盘按钮 */
+.btns-m {
+  display: flex;
+  justify-content: space-between;
+  margin: 16rpx 0;
+}
+.btns-m view {
+  flex: 1;
+  text-align: center;
+}
 .btns {
   flex: 1;
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
   font-size: 38rpx;
-  background-color: #999;
+  box-shadow: 0 0 30rpx #6d6a6a;
 }
 .btns > view {
   flex: 1;
   display: flex;
 }
 .btns > view > view {
-  flex: 25%;
-  margin: 0 4rpx 4rpx 0;
-  box-sizing: border-box;
+  position: relative;
+}
+.btns > view image {
+  position: absolute;
+  top: 40rpx;
+  left: 65rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+.btns > view > view {
+  width: 180rpx;
+  height: 120rpx;
+  margin: 0 6.5rpx 6.5rpx 0;
   text-align: center;
-  /* 控制键盘按钮高度 */
   line-height: 120rpx;
   background-color:#f2f2f2;
 }
-.btns > view:first-child view {
-  margin-top: 4rpx;
-  background-color: wheat;
+.btns > view:nth-child(-n+2) view {
+  background-color: #d8d8d8;
 }
 .btns > view > view:last-child {
-  background-color: wheat;
+  background-color: #d8d8d8;
 }
 .btns > view > view:first-child {
-  margin-left: 4rpx;
+  margin-left: 6.5rpx;
 }
+.btns-m .btn-bg,
 .btns > view .btn-bg {
-  background-color: #b6b6b6 !important;
+  background-color: #a6a6a6 !important;
 }
 .btns > view .btn-equal-bg {
   background-color: #398dcf !important;

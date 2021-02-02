@@ -7,8 +7,11 @@ A simple math calculator for wechat mini program
     <img src="" style="flex: 1" />
     <img src="" style="flex: 1" />
 </div>
-
 ## Function
+
+## Dependencies
+
+` npm install weui-miniprogram`
 
 ## License
 
