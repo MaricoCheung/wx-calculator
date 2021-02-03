@@ -16,6 +16,9 @@
     maskClosable="true"
     desc="{{rdMsg}}"
     title="历史记录" >
+      <view wx:for="{{rdMsg}}" wx:key="index">
+        <view>{{item}}</view>
+      </view>
     </mp-half-screen-dialog>
     <image src="../../assets/record.png" bindtap="rdHandle"></image>
   </view>
@@ -36,40 +39,40 @@
   <view class="btns">
     <block>
       <view>
-        <view hover-class="btn-bg" bindtap="btnHandle" data-value="10">%</view>
-        <view hover-class="btn-bg" bindtap="btnHandle" data-value="11">CE</view>
-        <view hover-class="btn-bg" bindtap="btnHandle" data-value="12">C</view>
-        <view hover-class="btn-bg" bindtap="btnHandle" data-value="13"><image src="../../assets/back.png"></image></view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="10" id="{{percent}}">%</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="11" id="{{clearPre}}">CE</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="12" id="{{clear}}">C</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="13" id="{{back}}"><image src="../../assets/back.png"></image></view>
       </view>
       <view>
-        <view hover-class="btn-bg" bindtap="btnHandle" data-value="14">1/x</view>
-        <view hover-class="btn-bg" bindtap="btnHandle" data-value="15">x²</view>
-        <view hover-class="btn-bg" bindtap="btnHandle" data-value="16"><image src="../../assets/root.png"></image></view>
-        <view hover-class="btn-bg" bindtap="btnHandle" data-value="17">÷</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="14" id="{{frac}}">1/x</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="15" id="{{pow}}">x²</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="16" id="{{root}}"><image src="../../assets/root.png"></image></view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="17" id="{{divid}}">÷</view>
       </view>
       <view>
-        <view hover-class="btn-bg" bindtap="btnHandle" data-value="7">7</view>
-        <view hover-class="btn-bg" bindtap="btnHandle" data-value="8">8</view>
-        <view hover-class="btn-bg" bindtap="btnHandle" data-value="9">9</view>
-        <view hover-class="btn-bg" bindtap="btnHandle" data-value="18">×</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="7" id="{{7}}">7</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="8" id="{{8}}">8</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="9" id="{{9}}">9</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="18" id="{{times}}">×</view>
       </view>
       <view>
-        <view hover-class="btn-bg" bindtap="btnHandle" data-value="4">4</view>
-        <view hover-class="btn-bg" bindtap="btnHandle" data-value="5">5</view>
-        <view hover-class="btn-bg" bindtap="btnHandle" data-value="6">6</view>
-        <view hover-class="btn-bg" bindtap="btnHandle" data-value="19">-</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="4" id="{{4}}">4</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="5" id="{{5}}">5</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="6" id="{{6}}">6</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="19" id="{{minu}}">-</view>
       </view>
       <view>
-        <view hover-class="btn-bg" bindtap="btnHandle" data-value="1">1</view>
-        <view hover-class="btn-bg" bindtap="btnHandle" data-value="2">2</view>
-        <view hover-class="btn-bg" bindtap="btnHandle" data-value="3">3</view>
-        <view hover-class="btn-bg" bindtap="btnHandle" data-value="20">+</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="1" id="{{1}}">1</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="2" id="{{2}}">2</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="3" id="{{3}}">3</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="20" id="{{plus}}">+</view>
       </view>
       <view>
-        <view hover-class="btn-bg" bindtap="btnHandle" data-value="21">±</view>
-        <view hover-class="btn-bg" bindtap="btnHandle" data-value="0">0</view>
-        <view hover-class="btn-bg" bindtap="btnHandle" data-value="22">.</view>
-        <view hover-class="btn-equal-bg" bindtap="btnHandle" data-value="23" id="equal">=</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="21" id="{{zf}}">±</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="0" id="{{0}}">0</view>
+        <view hover-class="btn-bg" bindtap="btnHandle" data-value="22" id="{{dot}}">.</view>
+        <view hover-class="btn-equal-bg" bindtap="btnHandle" data-value="23" id="{{equal}}">=</view>
       </view>
     </block>
   </view>

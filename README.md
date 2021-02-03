@@ -11,7 +11,7 @@ A simple math calculator for wechat mini program
 
 ## Dependencies
 
-` npm install weui-miniprogram`
+weui-miniprogram:  1.0.7
 
 ## License
 
